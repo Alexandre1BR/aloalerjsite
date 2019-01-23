@@ -92,9 +92,9 @@ class Progresses extends Controller
             $request->merge(['created_by_id' => Auth::user()->id]);
         }
 
-        $progress = $this->progressesRepository->createFromRequest(
-            $request
-        )->sendNotifications();
+        $progress = $this->progressesRepository->createFromRequest($request);
+
+        $progress->sendNotifications();
 
         $this->attachFilesFromRequest($request, $progress->id);
 

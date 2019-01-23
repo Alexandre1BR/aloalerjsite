@@ -7,7 +7,7 @@
 
     <div class="mt-4" id="vue-personal-info">
         <div class="row">
-            <div class="col-md-8 offset-md-2 form-bigger">
+            <div class="col-lg-8 offset-lg-2 form-bigger">
                 <div class="text-center">
                     <div class="section-title"><i class="fas fa-plus-circle"></i></i> Adicionar / <i class="far fa-address-card"></i> Dados Pessoais </div>
 
@@ -19,14 +19,17 @@
                         @endif
 
                         <div class="form-group row">
-                            <div class="col-6">
+                            <div class="col-12 col-md-6 mobile-form-field">
                                 <input id="cpf_cnpj" placeholder="CNPJ / CPF"
                                        class="form-control{{ $errors->getBag('validation')->has('cpf_cnpj') ? ' is-invalid' : '' }}"
                                        name="cpf_cnpj"
                                        value="{{is_null(old('cpf_cnpj')) ? $person->cpf_cnpj : old('cpf_cnpj') }}"
                                        required
                                        v-mask='["###.###.###-##", "##.###.###/####-##"]'
-                                       {{$person->id ? 'disabled="disabled"' : '' }}
+                                        @cannot('committee-canEdit','')
+                                            {{$person->id ? 'disabled="disabled"' : '' }}
+                                        @endcan
+
                                 >
 
                                 @if ($errors->getBag('validation')->has('cpf_cnpj'))
@@ -36,8 +39,7 @@
                                 @endif
                             </div>
 
-                            <div class="col-6">
-
+                            <div class="col-12 col-md-6">
                                 <input id="identification" placeholder="RG"
                                        class="form-control{{ $errors->getBag('validation')->has('identification') ? ' is-invalid' : '' }}"
                                        name="identification"
@@ -71,19 +73,21 @@
 
                         @if (!$workflow)
                             <div class="form-group row text-left user-dates-alerts">
-                                <div class="col-2 label">
-                                    <i class="fas fa-user-plus"></i> Criado em
+                                <div class="col-1 col-md-2 col-lg-2 col-xl-1 icon text-center">
+                                    <i class="fas fa-user-plus"></i>
                                 </div>
 
-                                <div class="col-4">
+                                <div class="col-5 col-md-4 col-lg-4 col-xl-2 text-left dates">
+                                    <div class="label">Criado em</div>
                                     {{ $person->created_at_formatted ?? '' }}
                                 </div>
 
-                                <div class="col-2 label">
-                                    <i class="fas fa-user-edit"></i> Alterado em
+                                <div class="col-1 col-md-2 col-lg-2 col-xl-1 icon text-center">
+                                    <i class="fas fa-user-edit"></i>
                                 </div>
 
-                                <div class="col-4">
+                                <div class="col-5 col-md-4 col-lg-4 col-xl-1 text-left dates">
+                                    <div class="label">Alterado em </div>
                                     {{ $person->updated_at_formatted ?? '' }}
                                 </div>
 

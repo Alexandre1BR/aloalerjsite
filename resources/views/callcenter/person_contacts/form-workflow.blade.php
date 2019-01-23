@@ -3,7 +3,7 @@
     @parent
 
     <div class="row mt-4">
-        <div class="col-md-8 offset-md-2 text-center">
+        <div class="col-lg-8 offset-lg-2 text-center">
             <div class="section-title">
                 <ul class="aloalerj-breadcrumbs">
                     <li>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="row" id="vue-contacts">
-        <div class="col-md-8 offset-md-2 form-bigger">
+        <div class="col-lg-8 offset-lg-2 form-bigger">
             <form method="POST" action="{{ route('people_contacts.storeViaWorkflow') }}" aria-label="Contatos">
                 @csrf
 

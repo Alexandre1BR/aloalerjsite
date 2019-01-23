@@ -10,21 +10,36 @@
 
 
   .navbar-nav {
-
     .nav-item {
       border-right: solid 2px #eff1f4;
       margin-right: 10px;
       padding-right: 10px;
 
+      @media screen and (max-width: 479px) {
+        /* start of phone styles */
+        border-right: solid 0px #eff1f4;
+        margin-right: 0px;
+        padding-right: 0px;
+        border-bottom: solid 1px #eff1f4;
+        &:last-child{
+          border: none;
+        }
+      }
       i {
         margin-right: 5px;
         color: $blue-lighter35;
       }
-
-
       &:last-child {
         border-right: none;
         margin-right: 0px;
+      }
+
+      &:first-child {
+        @media screen and (max-width: 479px) {
+          border-top: solid 2px #eff1f4;
+          margin-top: 15px;
+          padding-top: 10px;
+        }
       }
 
       .nav-link {
@@ -32,12 +47,13 @@
         font-family: 'proxima_nova_altbold';
         text-transform: uppercase;
         color: $blue-lighter50;
-
         &:hover {
           color: $blue-lighter70;
         }
       }
     }
+
+
   }
 }
 

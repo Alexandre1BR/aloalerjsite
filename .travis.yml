@@ -21,6 +21,7 @@ addons:
     paths:
       - ./storage/logs
       - ./tests/Browser/screenshots
+      - ./tests/Browser/screenshots
 
 before_script:
   - cp .env.travis .env

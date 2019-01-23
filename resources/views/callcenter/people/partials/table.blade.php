@@ -19,10 +19,9 @@
 
         <div class="card">
 
-
             <div class="card-header">
                 <div class="row align-items-center">
-                    <div class="col-4">
+                    <div class="col-12 col-md-4">
                         <h3>
                             <i class="fas fa-users"></i> Cidadãos Cadastrados
                         </h3>
@@ -35,7 +34,7 @@
 
 
 
-            <div class="card-body">
+            <div class="card-body d-none d-sm-block">
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
@@ -78,6 +77,42 @@
                     </tbody>
                 </table>
             </div>
+
+
+            <!-------------------- Start of MOBILE VERSION -------------------->
+
+            <div class="card-body d-block d-sm-none">
+
+                <div class="mobile-tables"  v-for="person in tables.people" >
+
+                    <div class="contact-line"><span class="mobile-label">Nome :</span>
+                        <a :href="'/callcenter/people/show/' + person.id">@{{ person.name }}</a>
+                    </div>
+                    <div class="contact-line"><span class="mobile-label">CPF :</span>
+                        <a :href="'/callcenter/people/show/' + person.id">@{{ person.cpf_cnpj }}</a>
+                    </div>
+                    <div class="contact-line"><span class="mobile-label">Endereços :</span>
+                        <p v-for="address in person.addresses.slice(0, 15)">
+                            @{{ address.street }}
+                        </p>
+                    </div>
+                    <div class="contact-line"><span class="mobile-label">Contatos :</span>
+                        <p v-for="contact in person.contacts.slice(0, 15)">
+                            @{{ contact.contact }}
+                        </p>
+                    </div>
+                    <div class="contact-line"><span class="mobile-label">Protocolos :</span>
+                        <p v-for="record in person.records.slice(0, 15)">
+                            <a :href="'/callcenter/records/show/' + record.id">@{{ record.protocol }}</a>
+                        </p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <!-------------------- END of MOBILE VERSION -------------------->
 
         </div>
 

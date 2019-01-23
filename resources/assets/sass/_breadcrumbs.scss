@@ -1,0 +1,45 @@
+
+// Breadcrumbs
+//*****************************  Breadcrumbs Style   *****************************
+
+.aloalerj-breadcrumbs {
+  padding-left: 0;
+  margin: 0;
+
+  li {
+    display: inline;
+    list-style-type: none;
+    margin-left: 0;
+  }
+
+  li:before {
+    content: "/";
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  li:first-child:before {
+    content: "";
+  }
+
+  li:not(:last-child) {
+    opacity: 0.5;
+  }
+
+  li:last-child {
+    font-weight: bold;
+  }
+
+  @media (max-width: 575.98px) {
+    li {
+      display: inherit;
+      &:before{
+        content: "";
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+    }
+  }
+
+}
+

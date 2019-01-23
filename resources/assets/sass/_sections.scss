@@ -7,6 +7,10 @@
   font-size: 30px;
   border-bottom: solid 0px $grey-dark004;
   color: $grey-light09;
+
+  @media (max-width: 575.98px) {
+    font-size: 24px;
+  }
 }
 
 

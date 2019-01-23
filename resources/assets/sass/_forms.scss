@@ -35,7 +35,12 @@
     color: $grey-dark01;
     &::placeholder {
       color: $grey-dark004;
+    }
 
+    @media screen and (max-width: 479px) {
+      /* start of phone styles */
+
+      font-size:1rem;
 
     }
   }
@@ -98,13 +103,45 @@
 
 
 .user-dates-alerts {
-  font-size: 1.2rem;
+  font-size: 0.85rem;
   font-family: 'proxima_nova_ltsemibold';
   color: lighten( $grey-dark01, 30% ) ;
+
+
+  .icon {
+    font-size: 28px;
+    /*padding-top: 5px*/;
+  }
   .label {
     opacity: 0.7;
     font-size: 85%;
   }
+
+  @media only screen and (min-width: 992px) {
+    .dates {
+      margin-left: -25px;
+      line-height: 1.2rem;
+    }
+  }
+
+
+
+  @media (max-width: 575.98px) {
+    font-size: 0.8rem;
+
+    .icon {
+      font-size: 22px;
+      padding-top: 4px;
+    }
+
+    .dates {
+      margin-left: 0px;
+      line-height: 1.2rem;
+    }
+  }
+
+
+
 }
 
 

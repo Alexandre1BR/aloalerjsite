@@ -3,7 +3,7 @@
     @parent
     <div class="mt-4" id="vue-record">
         <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
+            <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
                     {{--<i class="fas fa-plus-circle"></i> Adicionar / <i class="far fa-address-card"></i> Dados Pessoais <br>
                     --}}
@@ -38,7 +38,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8 offset-md-2 form-bigger">
+            <div class="col-lg-8 offset-lg-2 form-bigger">
 
                 <form method="POST" action="{{ route('records.store') }}" aria-label="Protocolos" id="formRecords" class="form-with-labels">
                     @csrf

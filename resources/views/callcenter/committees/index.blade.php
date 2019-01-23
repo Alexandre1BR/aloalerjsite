@@ -4,13 +4,13 @@
     <div class="card mt-4" id="vue-committees-search">
         <div class="card-header">
             <div class="row align-items-center">
-                <div class="col-4">
-                    <h2>
+                <div class="col-7 col-md-4">
+                    <h3>
                         <i class="fas fa-layer-group"></i> Comissões
-                    </h2>
+                    </h3>
                 </div>
 
-                <div class="col-8 text-right">
+                <div class="col-12 col-md-8 text-right">
                     <input
                         type="text"
                         id="search"
