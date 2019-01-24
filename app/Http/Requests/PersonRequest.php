@@ -40,6 +40,26 @@ class PersonRequest extends Request
             $this->replace($input);
         }
 
+        if (!empty($this->get('identification'))) {
+            $input = $this->all();
+
+            preg_match(
+                '/(n[a-ã]+o)\s+(informado)/mi',
+                trim($input['identification']),
+                $output_array
+            );
+
+            if (
+                isset($output_array) &&
+                isset($output_array[1]) &&
+                isset($output_array[2])
+            ) {
+                $input['identification'] = 'NÃO INFORMADO';
+            }
+
+            $this->replace($input);
+        }
+
         return $this->all();
     }
 }

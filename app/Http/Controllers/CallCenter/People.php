@@ -129,12 +129,10 @@ class People extends Controller
             return $view;
         } else {
             $person = $this->peopleRepository->findById($person_id);
-            $records = (
-                $this->recordsRepository->allWherePaginate(
-                    'person_id',
-                    $person_id,
-                    15
-                )
+            $records = $this->recordsRepository->allWherePaginate(
+                'person_id',
+                $person_id,
+                15
             );
 
             Workflow::end();
